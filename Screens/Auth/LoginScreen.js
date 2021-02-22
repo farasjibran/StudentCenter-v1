@@ -99,7 +99,7 @@ function LoginScreen({navigation}) {
     const styles = StyleSheet.create({
         passwordcontainer: {
             flexDirection: 'row',
-            top: wp('115%'),
+            top: wp('125%'),
             left: wp('5%'),
             position: 'absolute',
             zIndex: 2,
@@ -184,7 +184,7 @@ function LoginScreen({navigation}) {
                             width: wp('90%'),
                             height: hp('10%'),
                             backgroundColor: paperTheme.colors.title,
-                            top: wp('90%'),
+                            top: wp('100%'),
                             left: wp('5%'),
                             fontWeight: 'bold',
                             position: 'absolute',
@@ -216,7 +216,7 @@ function LoginScreen({navigation}) {
                     <Text
                         style={{
                             color: '#2F80ED',
-                            top: 500,
+                            top: 530,
                             left: wp('59%'),
                             fontWeight: 'bold',
                             position: 'absolute',

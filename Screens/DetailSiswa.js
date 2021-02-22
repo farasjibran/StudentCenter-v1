@@ -9,7 +9,7 @@ import {
     TextInput,
     ActivityIndicator,
     useTheme,
-    Banner
+    Snackbar
  } from 'react-native-paper';
 import {
     widthPercentageToDP as wp,
@@ -65,6 +65,14 @@ const DetailSiswa = ({route}) => {
         })
     })
 
+    React.useEffect(() => {
+        if (visible === true) {
+            setTimeout(() => {
+                setVisible(false)
+            }, 5000)
+        } 
+    })
+
     // Styles
     const styles = StyleSheet.create({
         textInput: {
@@ -94,28 +102,11 @@ const DetailSiswa = ({route}) => {
     if (loading) {
         return(
             <>
-                 <Banner
+                <Snackbar
                     visible={visible}
-                    actions={[
-                        {
-                        label: 'Hide',
-                        onPress: () => setVisible(false),
-                        },
-                    ]}
-                    icon={({size}) => (
-                        <Image
-                            source={{
-                                uri: 'https://img.icons8.com/ios-filled/48/000000/break--v1.png',
-                            }}
-                            style={{
-                                width: size,
-                                height: size,
-                                tintColor: 'red'
-                            }}
-                        />
-                    )}>
-                   If you want to edit this data, please report it to admin.
-                </Banner>
+                >
+                    If you want to edit this data, please report it to admin.
+                </Snackbar>
                 <ScrollView>
                     <View
                         style={{
