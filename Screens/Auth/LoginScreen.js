@@ -12,7 +12,6 @@ import {
     Text,
     useTheme,
     Modal,
-    ActivityIndicator,
     Portal
  } from 'react-native-paper';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -21,6 +20,9 @@ import {
     heightPercentageToDP as hp,
   } from 'react-native-responsive-screen';
 import AsyncStorage from '@react-native-community/async-storage';
+import {
+    BarIndicator,
+  } from 'react-native-indicators';
 
 function LoginScreen({navigation}) {
     const [showpassword, setShowPassword] = React.useState(true)
@@ -258,7 +260,7 @@ function LoginScreen({navigation}) {
                     <Modal
                             visible={loading}
                             contentContainerStyle={{
-                                backgroundColor: paperTheme.colors.backgroundmodal,
+                                backgroundColor: 'transparent',
                                 padding: 20,
                                 width: wp('50%'),
                                 height: hp('30%'),
@@ -267,11 +269,8 @@ function LoginScreen({navigation}) {
                                 
                             }}
                         >
-                            <ActivityIndicator 
-                                animating={true} 
-                                color="#345EF0" 
-                                size={40}
-                                style={styles.loading} 
+                            <BarIndicator
+                                color='white'
                             />
                     </Modal>
                 </Portal>

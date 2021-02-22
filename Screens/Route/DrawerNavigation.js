@@ -115,14 +115,12 @@ function DrawerNavigation() {
             <Stack.Navigator
               initialRouteName="Home"
               screenOptions={{
-                studentdata: (props) => <StudentData {...props}/>,
-              }}>
+                header: (props) => <HeaderApp {...props} />
+              }}
+            >
               <Stack.Screen 
                 name="Home" 
                 component={Home} 
-                options={{
-                  header: (props) => <HeaderApp {...props} />
-                }} 
               />
               <Stack.Screen name="Setting Profile" component={SettingScreen} />
               <Stack.Screen name="Detail Siswa" component={DetailSiswa} />

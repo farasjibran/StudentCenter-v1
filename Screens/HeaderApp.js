@@ -11,7 +11,11 @@ function HeaderApp({navigation, previous}) {
   return (
     <>
       <View>
-        <Appbar.Header style={{backgroundColor: 'transparent'}}>
+        <Appbar.Header 
+          style={{
+            backgroundColor: 'transparent',
+          }}
+        >
           {previous ? 
             <>
               <Appbar.BackAction
@@ -29,7 +33,7 @@ function HeaderApp({navigation, previous}) {
             </>
             : 
             <>
-               <Appbar.Content title="Title" color={paperTheme.colors.text} />
+             <Appbar.Content title="Title" color={paperTheme.colors.text} />
              <Appbar.Action
                 icon="bell"
                 style={styles.bellIcon}

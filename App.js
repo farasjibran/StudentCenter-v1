@@ -44,7 +44,8 @@ function App() {
       backgroundauth: '#2F80ED',
       calendarBackground: '#FFFFFF',
       calendarDay: '#333333',
-      calendarTitle: '#000000'
+      calendarTitle: '#000000',
+      loader: '#000000',
     },
   };
 
@@ -64,7 +65,8 @@ function App() {
       backgroundauth: '#000000',
       calendarBackground: '#121212',
       calendarDay: '#FFFFFF',
-      calendarTitle: '#FFFFFF'
+      calendarTitle: '#FFFFFF',
+      loader: '#FFFFFF',
     },
   };
 
@@ -89,7 +91,9 @@ function App() {
               <Stack.Screen 
                 name='SplashScreen'
                 component={SplashScreen}
-                options={{headerShown: false}}
+                options={{
+                  headerShown: false
+                }}
               />
               <Stack.Screen
                 name='LandingScreen'
@@ -109,7 +113,9 @@ function App() {
               <Stack.Screen
                 name='Landing'
                 component={DrawerNavigation}
-                options={{headerShown: false}}
+                options={{
+                  headerShown: false
+                }}
               />
             </Stack.Navigator>
           </NavigationContainer>

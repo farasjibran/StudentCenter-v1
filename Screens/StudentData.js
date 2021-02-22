@@ -11,14 +11,16 @@ import {
   Text, 
   FAB, 
   Card, 
-  useTheme, 
-  ActivityIndicator,
+  useTheme,
 } from 'react-native-paper';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import {
+  BarIndicator,
+} from 'react-native-indicators';
 
 const StudentData = ({navigation}) => {
   const paperTheme = useTheme();
@@ -145,11 +147,8 @@ const StudentData = ({navigation}) => {
     );
   } else {
     return(
-      <ActivityIndicator 
-        animating={true} 
-        color="#345EF0" 
-        size={40}
-        style={styles.loading} 
+      <BarIndicator
+          color={paperTheme.colors.loader}
       />
     )
   }

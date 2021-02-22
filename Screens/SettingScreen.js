@@ -14,7 +14,6 @@ import {
   useTheme,
   Modal,
   Portal,
-  ActivityIndicator
 } from 'react-native-paper';
 import {
   widthPercentageToDP as wp,
@@ -23,6 +22,9 @@ import {
 import {AuthContext} from '../components/context';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import AsyncStorage from '@react-native-community/async-storage';
+import {
+  BarIndicator,
+} from 'react-native-indicators';
 
 const SettingScreen = ({navigation}) => {
   const paperTheme = useTheme();
@@ -185,7 +187,7 @@ const SettingScreen = ({navigation}) => {
         <Modal
                 visible={loading}
                 contentContainerStyle={{
-                    backgroundColor: paperTheme.colors.backgroundmodal,
+                    backgroundColor: 'transparent',
                     padding: 20,
                     width: wp('50%'),
                     height: hp('30%'),
@@ -194,11 +196,8 @@ const SettingScreen = ({navigation}) => {
                     
                 }}
             >
-                <ActivityIndicator 
-                    animating={true} 
-                    color="#345EF0" 
-                    size={40}
-                    style={styles.loading} 
+                <BarIndicator
+                  color='white'
                 />
         </Modal>
     </Portal>

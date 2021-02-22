@@ -7,7 +7,6 @@ import {
  } from 'react-native';
 import { 
     TextInput,
-    ActivityIndicator,
     useTheme,
     Snackbar
  } from 'react-native-paper';
@@ -15,6 +14,9 @@ import {
     widthPercentageToDP as wp,
     heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
+import {
+    BarIndicator,
+  } from 'react-native-indicators';
 
 const DetailSiswa = ({route}) => {
     const paperTheme = useTheme();
@@ -71,7 +73,7 @@ const DetailSiswa = ({route}) => {
                 setVisible(false)
             }, 5000)
         } 
-    })
+    }, [visible])
 
     // Styles
     const styles = StyleSheet.create({
@@ -199,11 +201,8 @@ const DetailSiswa = ({route}) => {
         )
     } else {
         return(
-            <ActivityIndicator 
-                animating={true} 
-                size={40}
-                color="#345EF0" 
-                style={styles.loading} 
+            <BarIndicator
+                color={paperTheme.colors.loader}
             />
         )
     }
